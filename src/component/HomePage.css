@@ -179,8 +179,8 @@
   }
 
   .search-container-Inside {
-    width: 100%;
-    margin-left: 0;
+    min-width: 100%;
+    margin-left: -10px;
     padding: 8px 12px;
     height: auto;
   }

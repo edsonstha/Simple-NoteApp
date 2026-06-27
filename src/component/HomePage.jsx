@@ -14,15 +14,27 @@ export function HomePage() {
     localStorage.setItem('notesData', JSON.stringify(notes));
   }, [notes]);
 
-  const [light, setLight] = useState("Black");
+  const [light, setLight] = useState(() => {
+    const saveTheme = localStorage.getItem('appTheme');
+    return saveTheme ? saveTheme : 'Black'; 
+  });
 
-  function toggleLight() {
+  useEffect(() => {
+    localStorage.setItem('notesData', JSON.stringify(notes));
+  }, [notes]);
+
+  // Keep body background in sync with the saved theme state
+  useEffect(() => {
+    document.body.style.background = light === "White" ? "Black" : "White";
+  }, [light]);
+
+function toggleLight() {
     if (light === "White") {
-      document.body.style.background = "White";
       setLight("Black");
+      localStorage.setItem("appTheme", "Black");
     } else {
-      document.body.style.background = "Black";
       setLight("White");
+      localStorage.setItem("appTheme", "White");
     }
   }
 

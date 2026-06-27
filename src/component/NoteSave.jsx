@@ -13,12 +13,13 @@ export function saveNote({
   const currentDate = dayjs().format("YYYY MMM DD ");
 
   
-  const defaultColor = currentTheme === "White" ? "#ffffff" : "#000000";
+  const defaultColor = currentTheme === "White" ? "White" : "Black";
 
   const newNote = {
     text: noteText,
     currentDate: currentDate,
     color: textColor || defaultColor,
+    currentTheme: currentTheme
   };
   setNotes((preNotes) => [...preNotes, newNote]);
   setnoteText("");

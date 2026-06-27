@@ -160,7 +160,8 @@
   }
 
   .Header-part {
-    flex-direction: column;
+    /* flex-direction: column; */
+    display: flex;
     gap: 15px;
     margin: 15px;
   }
@@ -170,7 +171,7 @@
   }
 
   .Header-part span {
-    width: 100%;
+    /* width: 100%; */
     box-sizing: border-box;
   }
 

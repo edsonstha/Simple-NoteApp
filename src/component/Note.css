@@ -1,8 +1,11 @@
+/* ================= NOTES CONTAINER ================= */
+
 .notesContainer {
   width: 100%;
   margin-top: 30px;
   display: flex;
   justify-content: center;
+  padding-bottom: 20px;
 }
 
 .noteContainer-inside {
@@ -11,47 +14,67 @@
   gap: 20px;
   width: 100%;
   max-width: 740px;
-  max-height: 600px;
+
+  /* Important */
+  height: auto;
+  min-height: auto;
 }
+
+/* ================= NOTE & INPUT CARD ================= */
+
 .InputData,
 .note {
-  width: 350px;
-  height: 250px;
+  width: 100%;
+  min-height: 250px;
+  height: auto;
   border-radius: 8px;
-  border: 1px solid transparent;
   padding: 20px;
   box-sizing: border-box;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .InputData {
   display: flex;
 }
 
+/* ================= INPUT SECTION ================= */
+
 .InputData-Content {
-  font-size: 2rem;
-  display: grid;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .InputDataText {
-  outline: none;
-  border: none;
-  font-size: 1.15rem;
   width: 100%;
-  height: 140px;
+  min-height: 140px;
+  border: none;
+  outline: none;
   resize: none;
+  font-size: 1.1rem;
+  background: transparent;
 }
 
 .InputDataText::placeholder {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #75726b;
 }
+
+/* ================= FOOTER ================= */
 
 .submit-textColor {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  margin-top: auto;
 }
 
 .color-text {
@@ -60,74 +83,61 @@
 }
 
 .SaveButton {
-  font-size: 1rem;
   padding: 8px 15px;
   border-radius: 10px;
-  border: 0.5px solid black;
+  border: 1px solid black;
   cursor: pointer;
+  font-size: 1rem;
 }
 
-.note {
-  font-size: 1.2rem;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
+/* ================= NOTE CONTENT ================= */
 
 .note-text-content {
   flex-grow: 1;
   word-break: break-word;
-  font-size: 1.1rem;
-  scrollbar-width: thin;
-  overflow-y: auto;
-  min-height: 150px;
-  padding: 5px;
   white-space: pre-wrap;
+  overflow-wrap: break-word;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 5px 0;
 }
 
+/* ================= NOTE FOOTER ================= */
+
 .note-date {
-  font-size: 0.9rem;
-  color: #75726b;
   display: flex;
   justify-content: space-between;
-  margin-right: 15px;
-  height: 20px;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #75726b;
 }
 
 .note-date.dark {
   color: white;
 }
 
-.edit-icon{
-  width: 30px;
-  height: 30px;
+/* ================= ICONS ================= */
+
+.edit-icon {
+  width: 28px;
+  height: 28px;
   cursor: pointer;
-  margin-left: 30%;
-  margin-top: 0px;
-}
-.note-pic.light {
-  color: black;
 }
 
 .trash-pic {
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
 }
 
+.edit-icon.dark,
 .trash-pic.dark {
   filter: brightness(0) invert(1);
 }
 
+.edit-icon.light,
 .trash-pic.light {
-  filter: brightness(0);
-}
-.edit-icon.dark {
-  filter: brightness(0) invert(1);
-}
-.edit-icon.light {
   filter: brightness(0);
 }
 
@@ -141,11 +151,9 @@
 
   .InputData,
   .note {
-    width: 90%;
     max-width: 500px;
   }
 }
-
 
 /* ================= MOBILE ================= */
 
@@ -157,15 +165,14 @@
 
   .InputData,
   .note {
-    /* width: 100%; */
-    height: auto;
+    width: 100%;
     min-height: 220px;
     padding: 15px;
   }
 
   .InputDataText {
+    min-height: 120px;
     font-size: 1rem;
-    height: 120px;
   }
 
   .submit-textColor {
@@ -175,16 +182,19 @@
 
   .SaveButton {
     width: 100%;
-    margin-top: 10px;
   }
 
   .note-text-content {
-    min-height: 100px;
     font-size: 1rem;
   }
 
   .note-date {
     font-size: 0.8rem;
+  }
+
+  .edit-icon {
+    width: 24px;
+    height: 24px;
   }
 
   .trash-pic {
@@ -193,14 +203,9 @@
   }
 }
 
-
 /* ================= SMALL MOBILE ================= */
 
 @media (max-width: 400px) {
-  .Header-title {
-    font-size: 1.5rem;
-  }
-
   .InputData,
   .note {
     padding: 12px;
@@ -210,13 +215,8 @@
     font-size: 0.9rem;
   }
 
-  .color-text {
-    font-size: 1rem;
-  }
-
   .SaveButton {
     font-size: 0.9rem;
-    padding: 7px 10px;
   }
 
   .note-text-content {

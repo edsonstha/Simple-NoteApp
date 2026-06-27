@@ -152,12 +152,14 @@
   .main-app-container-light,
   .main-app-container-dark {
     width: 95%;
-    min-height: auto;
+    max-height: auto;
     margin: 15px auto;
   }
 
   .Header-part {
-    flex-direction: column;
+    display: flex;
+    text-align: center;
+    /* flex-direction: column; */
     gap: 15px;
     margin: 15px;
   }
@@ -167,7 +169,7 @@
   }
 
   .Header-part span {
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
     padding: 10px;
   }
@@ -179,8 +181,9 @@
   }
 
   .search-container-Inside {
-    min-width: 100%;
-    margin-left: -10px;
+    /* min-width: 100%; */
+    margin-left: 10px;
+    margin-right: 10px;
     padding: 8px 12px;
     height: auto;
   }

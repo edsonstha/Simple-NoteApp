@@ -14,7 +14,10 @@ export function saveNote({
 
   
   const defaultColor = currentTheme === "White" ? "White" : "Black";
-
+  if(noteText.trim() === ''){
+    alert("Enter Some Text......");
+  }
+  
   const newNote = {
     text: noteText,
     currentDate: currentDate,

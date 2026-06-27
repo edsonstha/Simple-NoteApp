@@ -43,7 +43,11 @@ function toggleLight() {
       <div className="Header-part">
         <p className="Header-title">Notes</p>
         <span className="toggle-theme" onClick={toggleLight}>
-          Toggle Theme
+          {light === 'White'? 
+          (<img src="/icon/light-mode.png" className="toggle-image"/>
+          ):(
+            <img src="icon/dark-mode.png" className="toggle-image"/>
+          )}
         </span>
       </div>
 

@@ -1,12 +1,15 @@
 import { useState, useRef } from "react";
 import { saveNote } from "./NoteSave";
+import { SavedColorNotes } from "./sharedFile/ColorSaved";
 import "./Note.css";
 
+//use for the tyo index leni wala format dincha
 export function InputNoteData({ notes, setNotes, currentTheme }) {
   const [textColor, setTextColor] = useState("");
   const [noteText, setnoteText] = useState(""); //This is only for getting data then send to the array
 
   const textareaRef = useRef(null);
+
   const colorSelect = (color) => {
     setTextColor(color);
     if (textareaRef.current) {
@@ -30,12 +33,26 @@ export function InputNoteData({ notes, setNotes, currentTheme }) {
           ref={textareaRef}
           placeholder="Type Your Notes Here......"
           className="InputDataText"
-          style={{ color: textColor || elementTextColor, backgroundColor: boxBackground }}
+          style={{
+            color: textColor || elementTextColor,
+            backgroundColor: boxBackground,
+          }}
           value={noteText}
           onChange={handleChange}
         />
 
-        <div className="submit-textColor">
+        <SavedColorNotes
+          saveNote={saveNote}
+          noteText={noteText}
+          setnoteText={setnoteText}
+          textColor={textColor}
+          notes={notes}
+          setNotes={setNotes}
+          currentTheme={currentTheme}
+          colorSelect={colorSelect}
+        />
+
+        {/* <div className="submit-textColor">
           <span className="color-text" onClick={() => colorSelect("#FF9AA2")}>
             🔴
           </span>
@@ -68,7 +85,7 @@ export function InputNoteData({ notes, setNotes, currentTheme }) {
           >
             Save
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

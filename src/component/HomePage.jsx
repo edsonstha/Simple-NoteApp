@@ -3,6 +3,7 @@ import { InputNoteData } from "./NoteForm";
 import { DisplayNote } from "./NoteList";
 import "./HomePage.css";
 
+//tyo whole page ko format lai dekaucha  with header
 export function HomePage() {
   const [notes, setNotes] = useState(() => {
     const saveNotes = localStorage.getItem("notesData");

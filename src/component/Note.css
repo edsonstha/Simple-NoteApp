@@ -95,10 +95,18 @@
   margin-right: 15px;
   height: 20px;
 }
+
 .note-date.dark {
   color: white;
 }
 
+.edit-icon{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-left: 30%;
+  margin-top: 0px;
+}
 .note-pic.light {
   color: black;
 }
@@ -114,6 +122,12 @@
 }
 
 .trash-pic.light {
+  filter: brightness(0);
+}
+.edit-icon.dark {
+  filter: brightness(0) invert(1);
+}
+.edit-icon.light {
   filter: brightness(0);
 }
 

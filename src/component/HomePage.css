@@ -1,0 +1,230 @@
+.main-app-container-light {
+  width: 47%;
+  min-height: 90vh;
+  border: 1px solid rgb(255, 255, 255);
+  text-align: center;
+  margin: 50px auto 50px auto;
+  border-radius: 5px;
+  color: white;
+}
+
+.main-app-container-light .search-container-Inside {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 10px 15px;
+  max-width: 650px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.main-app-container-light .SearchBar-Input {
+  color: white;
+}
+.main-app-container-light .searchIcon {
+  filter: invert(1);
+}
+
+.main-app-container-light .SearchBar-Input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.main-app-container-dark {
+  width: 47%;
+  min-height: 90vh;
+  border: 1px solid black;
+  text-align: center;
+  margin: 50px auto 50px auto;
+  border-radius: 5px;
+}
+
+.Header-part {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.Header-part p {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.Header-part span {
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 1rem;
+  padding: 8px;
+  cursor: pointer;
+}
+.main-app-container-light .toggle-theme{
+  border: 1px solid white;
+}
+
+.Search-bar-container {
+  display: grid;
+  flex-grow: 1;
+  min-width: 45%;
+}
+
+.search-container-Inside {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  max-width: 650px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.searchIcon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.SearchBar-Input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.1rem;
+  color: black;
+}
+
+.SearchBar-Input::placeholder {
+  color: #75726b;
+}
+
+.noteFlex {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* ================= LARGE TABLETS ================= */
+
+@media (max-width: 1024px) {
+  .main-app-container-light,
+  .main-app-container-dark {
+    width: 70%;
+  }
+}
+
+
+/* ================= TABLETS ================= */
+
+@media (max-width: 768px) {
+  .main-app-container-light,
+  .main-app-container-dark {
+    width: 85%;
+    margin: 30px auto;
+  }
+
+  .Header-part {
+    align-items: center;
+  }
+
+  .Header-part p {
+    font-size: 1.7rem;
+  }
+
+  .Header-part span {
+    font-size: 0.9rem;
+    padding: 7px 10px;
+  }
+
+  .search-container-Inside {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  .main-app-container-light,
+  .main-app-container-dark {
+    width: 95%;
+    min-height: auto;
+    margin: 15px auto;
+  }
+
+  .Header-part {
+    flex-direction: column;
+    gap: 15px;
+    margin: 15px;
+  }
+
+  .Header-part p {
+    font-size: 1.5rem;
+  }
+
+  .Header-part span {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .Search-bar-container {
+    min-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .search-container-Inside {
+    width: 100%;
+    margin-left: 0;
+    padding: 8px 12px;
+    height: auto;
+  }
+
+  .SearchBar-Input {
+    font-size: 1rem;
+  }
+
+  .searchIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .noteFlex {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width: 400px) {
+  .main-app-container-light,
+  .main-app-container-dark {
+    width: 98%;
+    margin: 10px auto;
+  }
+
+  .Header-part p {
+    font-size: 1.3rem;
+  }
+
+  .Header-part span {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .SearchBar-Input {
+    font-size: 0.9rem;
+  }
+
+  .searchIcon {
+    width: 18px;
+    height: 18px;
+  }
+}

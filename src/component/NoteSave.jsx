@@ -8,14 +8,13 @@ export function saveNote({
   setNotes,
   currentTheme,
 }) {
-    if(noteText.trim() === '')return;
 
   const currentDate = dayjs().format("YYYY MMM DD ");
 
-  
   const defaultColor = currentTheme === "White" ? "White" : "Black";
   if(noteText.trim() === ''){
     alert("Enter Some Text......");
+    return;
   }
   
   const newNote = {

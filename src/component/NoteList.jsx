@@ -13,7 +13,6 @@ export function DisplayNote({ notes, currentTheme, setNotes }) {
 
   const [editingIndex, setEditingIndex] = useState(null);
   const [editNotes, setEditNotes] = useState("");
-  const [updateMessage, setUpdateMessage] = useState(false);
 
   const saveEdit = (index) => {
     const updateNotes = [...notes];
@@ -22,13 +21,12 @@ export function DisplayNote({ notes, currentTheme, setNotes }) {
 
     setNotes(updateNotes);
 
-    setUpdateMessage(true);
-
     setTimeout(() => {
-      setUpdateMessage(false);
       setEditingIndex(null);
     }, 1000);
   };
+
+  
 
   return (
     <>
@@ -51,12 +49,14 @@ export function DisplayNote({ notes, currentTheme, setNotes }) {
                   value={editNotes}
                   onChange={(e) => setEditNotes(e.target.value)}
                 />
-
+{/* 
                 {updateMessage && (
-                  <p style={{ color: "green" }}>
-                    Update Successfully!
+                  <p style={{ color: "green" }} className="saveMessage">
+                    {buttonText === 'Update'? 
+                    "Update" : "Save "
+                  }"Successfully!"
                   </p>
-                )}
+                )} */}
               </>
             ) : (
               <pre

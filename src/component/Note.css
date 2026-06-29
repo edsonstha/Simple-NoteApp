@@ -142,6 +142,12 @@
   filter: brightness(0);
 }
 
+.saveMessage{
+  font-size: 1rem;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
 /* ================= TABLET ================= */
 
 @media (max-width: 900px) {
